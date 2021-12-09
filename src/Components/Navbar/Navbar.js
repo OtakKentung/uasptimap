@@ -89,7 +89,7 @@ function Navbar() {
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map2" exact>
-                            <i className="fas fa-map"></i> Map 2
+                            <i className="fas fa-map"></i> Directions
                         </Link>
                     </li>
 

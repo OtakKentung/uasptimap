@@ -27,7 +27,10 @@ function App() {
           </Route>
           <Route path="/aboutus" exact element={<AboutUs/>}></Route>
           <Route path="/map1" exact element={<Map1 />}></Route>
-          <Route path="/map2" exact element={<Map2 />}></Route>
+          <Route path="/map2" exact element={
+          <div className="App" id="viewDiv">
+            <Map2 />
+          </div>}></Route>
           <Route path="/map3" exact element={<Map3 />}></Route>
           <Route path="/map4" exact element={<Map4 />}></Route>
           <Route path="/map5" exact element={<Map5 />}></Route>
