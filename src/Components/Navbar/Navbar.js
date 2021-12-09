@@ -95,13 +95,13 @@ function Navbar() {
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map3" exact>
-                            <i className="fas fa-map"></i> Map 3
+                            <i className="fas fa-map"></i> Satelite Map
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map4" exact>
-                            <i className="fas fa-map"></i> Map 4
+                            <i className="fas fa-map"></i> Navigation Map
                         </Link>
                     </li>
 

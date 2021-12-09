@@ -31,8 +31,16 @@ function App() {
           <div className="App" id="viewDiv">
             <Map2 />
           </div>}></Route>
-          <Route path="/map3" exact element={<Map3 />}></Route>
-          <Route path="/map4" exact element={<Map4 />}></Route>
+          <Route path="/map3" exact element={
+            <div className="App" id="MapEl">
+              <Map3 />
+            </div>}>
+          </Route>
+          <Route path="/map4" exact element={
+            <div className="App" id="MapEl">
+              <Map4 />
+            </div>}>
+          </Route>
           <Route path="/map5" exact element={<Map5 />}></Route>
         </Routes>
     </Router>

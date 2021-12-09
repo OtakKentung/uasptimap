@@ -50,6 +50,7 @@ function Map2() {
         }),
         useHeadingEnabled: false
       });
+
     view.ui.add(track, "top-left");
   });
   return (
