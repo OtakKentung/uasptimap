@@ -9,13 +9,14 @@ function Map() {
             let view;
             let track;
 
-            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator"], {
+            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator", "esri/widgets/BasemapToggle",
+            "esri/widgets/BasemapGallery"], {
                 css: true
-            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator]) => {
+            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator, BasemapGallery, BasemapToggle]) => {
                 esriConfig.apiKey = "AAPK646fc7baa89c4b608eb58b54dbbbe1066JR7fGrtnfyFPoTQnl4Z7yp0rUqUJMjQUrurVPBVnBAt75VOFZL-g-La4SwrdiZf";
 
                 const map = new WebMap({
-                    basemap: 'arcgis-topographic'
+                    basemap: 'arcgis-navigation'
                 })
 
                 view = new MapView({
@@ -103,6 +104,15 @@ function Map() {
                 select.addEventListener('change', function (event) {
                     findPlaces(event.target.value, view.center);
                 });
+
+                const basemapToggle = new BasemapToggle({
+                    view: view,
+                    nextBasemap: "arcgis-imagery"
+                 });
+  
+                 view.ui.add(basemapToggle, {
+                    position: "bottom-right"
+                  });    
             })
             return () => {
                 //close the map view
@@ -114,7 +124,7 @@ function Map() {
 
         })
     return (
-        <div style={{ height: 800 }} ref={MapEl}>
+        <div style={{ height: 544.74 }} ref={MapEl}>
 
         </div>
     )
