@@ -45,7 +45,9 @@ function Navbar() {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-mainbg">
-            <Link className="navbar-brand navbar-logo" to="/" exact>PythMap</Link>
+            <Link className="navbar-brand navbar-logo pink" to="/" exact>
+                <i className="fas fa-map"></i> PythMap
+            </Link>
 
             <button className="navbar-toggler" type="button"
                 onClick={ function(){
@@ -69,7 +71,7 @@ function Navbar() {
 
                     <li className="nav-item active">
                         <Link className="nav-link" to="/" exact>
-                            <i className="fas fa-tachometer-alt"></i> Home
+                            <i className="fas fa-home"></i> Home
                         </Link>
                     </li>
 
@@ -81,31 +83,31 @@ function Navbar() {
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map1" exact>
-                            <i className="far fa-chart-bar"></i> Map 1
+                            <i className="fas fa-map"></i> Map 1
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map2" exact>
-                            <i className="far fa-chart-bar"></i> Map 2
+                            <i className="fas fa-map"></i> Map 2
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map3" exact>
-                            <i className="far fa-chart-bar"></i> Map 3
+                            <i className="fas fa-map"></i> Map 3
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map4" exact>
-                            <i className="far fa-chart-bar"></i> Map 4
+                            <i className="fas fa-map"></i> Map 4
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map5" exact>
-                            <i className="far fa-chart-bar"></i> Map 5
+                            <i className="fas fa-map"></i> Map 5
                         </Link>
                     </li>
                     
