@@ -7,10 +7,11 @@ function Map() {
     useEffect(
         () => {
             let view;
+            let track;
 
-            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap"], {
+            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic"], {
                 css: true
-            }).then(([esriConfig, MapView, WebMap]) => {
+            }).then(([esriConfig, MapView, WebMap, Track, Graphic]) => {
                 esriConfig.apiKey = "AAPK646fc7baa89c4b608eb58b54dbbbe1066JR7fGrtnfyFPoTQnl4Z7yp0rUqUJMjQUrurVPBVnBAt75VOFZL-g-La4SwrdiZf";
 
                 const map = new WebMap({
@@ -23,6 +24,23 @@ function Map() {
                     zoom: 16, // Zoom level
                     container: "MapEl" // Div element
                 });
+
+                track = new Track({
+                    view: view,
+                    graphic: new Graphic({
+                        symbol: {
+                            type: "simple-marker",
+                            size: "12px",
+                            color: "green",
+                            outline: {
+                                color: "#efefef",
+                                width: "1.5px"
+                            }
+                        }
+                    }),
+                    useHeadingEnabled: false
+                });
+                view.ui.add(track, "top-left");
             })
             return () => {
                 //close the map view
