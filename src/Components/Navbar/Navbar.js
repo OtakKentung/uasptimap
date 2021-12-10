@@ -90,25 +90,25 @@ function Navbar() {
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map2" exact>
-                            <i className="fas fa-map"></i> Directions
+                            <i className="fas fa-route"></i> Directions
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map3" exact>
-                            <i className="fas fa-map"></i> Satelite Map
+                            <i className="fas fa-satellite"></i> Satellite Map
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map4" exact>
-                            <i className="fas fa-map"></i> Navigation Map
+                            <i className="fas fa-compass"></i> Navigation Map
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map5" exact>
-                            <i className="fas fa-map"></i> Globe
+                            <i className="fas fa-globe"></i> Globe
                         </Link>
                     </li>
 
