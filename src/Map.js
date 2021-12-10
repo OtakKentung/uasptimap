@@ -9,13 +9,13 @@ function Map() {
             let view;
             let track;
 
-            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator"], {
+            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator", "esri/widgets/BasemapGallery", "esri/widgets/Expand"], {
                 css: true
-            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator]) => {
+            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator, BasemapGallery, Expand]) => {
                 esriConfig.apiKey = "AAPK646fc7baa89c4b608eb58b54dbbbe1066JR7fGrtnfyFPoTQnl4Z7yp0rUqUJMjQUrurVPBVnBAt75VOFZL-g-La4SwrdiZf";
 
                 const map = new WebMap({
-                    basemap: 'arcgis-topographic'
+                    basemap: 'arcgis-navigation'
                 })
 
                 view = new MapView({
@@ -103,6 +103,24 @@ function Map() {
                 select.addEventListener('change', function (event) {
                     findPlaces(event.target.value, view.center);
                 });
+
+                var basemapGallery = new BasemapGallery({
+                    view: view,
+                    container: document.createElement("div"),
+                    source: {
+                        query: {
+                          title: '"World Basemaps for Developers" AND owner:esri'
+                        }
+                      }
+                });
+                
+                var bgExpand = new Expand({
+                    view: view,
+                    content: basemapGallery.domNode,
+                    expandIconClass: "esri-icon-basemap"
+                });
+
+                view.ui.add(bgExpand, "bottom-right");
             })
             return () => {
                 //close the map view
@@ -114,7 +132,7 @@ function Map() {
 
         })
     return (
-        <div style={{ height: 800 }} ref={MapEl}>
+        <div style={{ height: 570 }} ref={MapEl}>
 
         </div>
     )
