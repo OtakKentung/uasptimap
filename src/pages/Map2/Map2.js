@@ -7,7 +7,7 @@ import { loadModules } from 'esri-loader';
 function Map2() {
   const viewDiv = useRef(null);
   useEffect(
-        () => {
+    () => {
       loadModules(["esri/Map",
         "esri/views/MapView",
         "esri/widgets/Directions",
@@ -121,10 +121,10 @@ function Map2() {
         return () => {
           //close the map view
           if (!!view) {
-              view.destroy()
-              view = null
+            view.destroy()
+            view = null
           }
-      }
+        }
 
       });
     })
@@ -132,7 +132,7 @@ function Map2() {
     <div className="App" id="viewDiv">
       <div style={{ height: 578.5 }} ref={viewDiv}></div>
     </div>
-    
+
   );
 }
 export default Map2;

@@ -25,102 +25,102 @@ function Map() {
                     container: "MapEl" // Div element
                 });
 
-                // track = new Track({
-                //     view: view,
-                //     graphic: new Graphic({
-                //         symbol: {
-                //             type: "simple-marker",
-                //             size: "12px",
-                //             color: "green",
-                //             outline: {
-                //                 color: "#efefef",
-                //                 width: "1.5px"
-                //             }
-                //         }
-                //     }),
-                //     useHeadingEnabled: false
-                // });
-                // view.ui.add(track, "top-left");
+                track = new Track({
+                    view: view,
+                    graphic: new Graphic({
+                        symbol: {
+                            type: "simple-marker",
+                            size: "12px",
+                            color: "green",
+                            outline: {
+                                color: "#efefef",
+                                width: "1.5px"
+                            }
+                        }
+                    }),
+                    useHeadingEnabled: false
+                });
+                view.ui.add(track, "top-left");
 
-                // const places = ["Choose a place type...", "Parks and Outdoors", "Coffee shop", "Gas station", "Food", "Hotel"];
-                // const select = document.createElement("select", "");
-                // select.setAttribute("class", "esri-widget esri-select");
-                // select.setAttribute("style", "width: 175px; font-family: 'Avenir Next W00'; font-size: 1em");
+                const places = ["Choose a place type...", "Parks and Outdoors", "Coffee shop", "Gas station", "Food", "Hotel"];
+                const select = document.createElement("select", "");
+                select.setAttribute("class", "esri-widget esri-select");
+                select.setAttribute("style", "width: 175px; font-family: 'Avenir Next W00'; font-size: 1em");
 
-                // places.forEach(function (p) {
-                //     const option = document.createElement("option");
-                //     option.value = p;
-                //     option.innerHTML = p;
-                //     select.appendChild(option);
-                // });
+                places.forEach(function (p) {
+                    const option = document.createElement("option");
+                    option.value = p;
+                    option.innerHTML = p;
+                    select.appendChild(option);
+                });
 
-                // view.ui.add(select, "top-right");
+                view.ui.add(select, "top-right");
 
-                // const locatorUrl = "http://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer";
-                // function findPlaces(category, pt) {
-                //     locator.addressToLocations(locatorUrl, {
-                //         location: pt,
-                //         categories: [category],
-                //         maxLocations: 25,
-                //         outFields: ["Place_addr", "PlaceName"]
-                //     })
+                const locatorUrl = "http://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer";
+                function findPlaces(category, pt) {
+                    locator.addressToLocations(locatorUrl, {
+                        location: pt,
+                        categories: [category],
+                        maxLocations: 25,
+                        outFields: ["Place_addr", "PlaceName"]
+                    })
 
-                //         .then(function (results) {
-                //             view.popup.close();
-                //             view.graphics.removeAll();
+                        .then(function (results) {
+                            view.popup.close();
+                            view.graphics.removeAll();
 
-                //             results.forEach(function (result) {
-                //                 view.graphics.add(
-                //                     new Graphic({
-                //                         attributes: result.attributes,  // Data attributes returned
-                //                         geometry: result.location, // Point returned
-                //                         symbol: {
-                //                             type: "simple-marker",
-                //                             color: "#000000",
-                //                             size: "12px",
-                //                             outline: {
-                //                                 color: "#ffffff",
-                //                                 width: "2px"
-                //                             }
-                //                         },
+                            results.forEach(function (result) {
+                                view.graphics.add(
+                                    new Graphic({
+                                        attributes: result.attributes,  // Data attributes returned
+                                        geometry: result.location, // Point returned
+                                        symbol: {
+                                            type: "simple-marker",
+                                            color: "#000000",
+                                            size: "12px",
+                                            outline: {
+                                                color: "#ffffff",
+                                                width: "2px"
+                                            }
+                                        },
 
-                //                         popupTemplate: {
-                //                             title: "{PlaceName}", // Data attribute names
-                //                             content: "{Place_addr}"
-                //                         }
-                //                     }));
-                //             });
+                                        popupTemplate: {
+                                            title: "{PlaceName}", // Data attribute names
+                                            content: "{Place_addr}"
+                                        }
+                                    }));
+                            });
 
-                //         });
+                        });
 
-                // }
-                // view.watch("stationary", function (val) {
-                //     if (val) {
-                //         findPlaces(select.value, view.center);
-                //     }
-                // });
+                }
+                view.watch("stationary", function (val) {
+                    if (val) {
+                        findPlaces(select.value, view.center);
+                    }
+                });
 
-                // select.addEventListener('change', function (event) {
-                //     findPlaces(event.target.value, view.center);
-                // });
+                select.addEventListener('change', function (event) {
+                    findPlaces(event.target.value, view.center);
+                });
 
-                // var basemapGallery = new BasemapGallery({
-                //     view: view,
-                //     container: document.createElement("div"),
-                //     source: {
-                //         query: {
-                //             title: '"World Basemaps for Developers" AND owner:esri'
-                //         }
-                //     }
-                // });
+                var basemapGallery = new BasemapGallery({
+                    view: view,
+                    container: document.createElement("div"),
+                    source: {
+                        query: {
+                            title: '"World Basemaps for Developers" AND owner:esri'
+                        }
+                    }
+                });
 
-                // var bgExpand = new Expand({
-                //     view: view,
-                //     content: basemapGallery.domNode,
-                //     expandIconClass: "esri-icon-basemap"
-                // });
+                var bgExpand = new Expand({
+                    view: view,
+                    content: basemapGallery.domNode,
+                    expandIconClass: "esri-icon-basemap"
+                });
 
-                // view.ui.add(bgExpand, "bottom-right");
+                view.ui.add(bgExpand, "bottom-right");
             })
             return () => {
                 //close the map view

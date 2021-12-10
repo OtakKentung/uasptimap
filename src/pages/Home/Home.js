@@ -109,11 +109,11 @@ function Home() {
                     container: document.createElement("div"),
                     source: {
                         query: {
-                          title: '"World Basemaps for Developers" AND owner:esri'
+                            title: '"World Basemaps for Developers" AND owner:esri'
                         }
-                      }
+                    }
                 });
-                
+
                 var bgExpand = new Expand({
                     view: view,
                     content: basemapGallery.domNode,

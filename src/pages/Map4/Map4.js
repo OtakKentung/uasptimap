@@ -26,9 +26,9 @@ function Map4() {
                 });
                 const search = new Search({  //Add Search widget
                     view: view
-                  });
-              
-                  view.ui.add(search, "top-right"); //Add to the map
+                });
+
+                view.ui.add(search, "top-right"); //Add to the map
 
                 track = new Track({
                     view: view,
@@ -121,7 +121,7 @@ function Map4() {
         <div className="App" id="MapEl">
             <div style={{ height: 578.5 }} ref={MapEl}></div>
         </div>
-        
+
     )
 }
 export default Map4;
