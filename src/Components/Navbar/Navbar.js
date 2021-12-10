@@ -111,8 +111,6 @@ function Navbar() {
                             <i className="fas fa-globe"></i> Globe
                         </Link>
                     </li>
-
-
                 </ul>
             </div>
         </nav>
