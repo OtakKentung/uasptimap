@@ -33,7 +33,7 @@ function Card() {
                 </div>
                 <div className="content">
                     <h3>Vallencius Gavriel</h3>
-                    <h5>00000045444</h5>
+                    <h5>00000045651</h5>
                     <p>Gallery Map, Map</p>
                 </div>
             </div>
