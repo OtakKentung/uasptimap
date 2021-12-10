@@ -9,9 +9,9 @@ function Map4() {
             let view;
             let track;
 
-            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator"], {
+            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator", "esri/widgets/Search"], {
                 css: true
-            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator]) => {
+            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator, Search]) => {
                 esriConfig.apiKey = "AAPK646fc7baa89c4b608eb58b54dbbbe1066JR7fGrtnfyFPoTQnl4Z7yp0rUqUJMjQUrurVPBVnBAt75VOFZL-g-La4SwrdiZf";
 
                 const map = new WebMap({
@@ -24,6 +24,11 @@ function Map4() {
                     zoom: 16, // Zoom level
                     container: "MapEl" // Div element
                 });
+                const search = new Search({  //Add Search widget
+                    view: view
+                  });
+              
+                  view.ui.add(search, "top-right"); //Add to the map
 
                 track = new Track({
                     view: view,

@@ -46,7 +46,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-mainbg">
             <Link className="navbar-brand navbar-logo pink" to="/" exact>
-                <i className="fas fa-map"></i> PythMap
+                <i className="fas fa-map-marked-alt"></i> PythMap
             </Link>
 
             <button className="navbar-toggler" type="button"
@@ -84,7 +84,7 @@ function Navbar() {
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map1" exact>
-                            <i className="fas fa-map"></i> Map 1
+                            <i className="fas fa-cubes"></i> 3D Globe
                         </Link>
                     </li>
 

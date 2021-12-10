@@ -3,6 +3,8 @@
   height: auto;
   max-height: 100vh;
   overflow: auto;
+  background: radial-gradient(#12bff2, #0269a1);
+  border: none;
 }
 
 .App-logo {

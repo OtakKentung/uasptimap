@@ -139,5 +139,8 @@ i {
     }
 }
 .pink {
-    color: #f744fd;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#88e3ff, #cf16c6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
