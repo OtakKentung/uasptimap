@@ -9,10 +9,9 @@ function Map() {
             let view;
             let track;
 
-            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator", "esri/widgets/BasemapToggle",
-            "esri/widgets/BasemapGallery"], {
+            loadModules(["esri/config", "esri/views/MapView", "esri/WebMap", "esri/widgets/Track", "esri/Graphic", "esri/rest/locator", "esri/widgets/BasemapGallery", "esri/widgets/Expand"], {
                 css: true
-            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator, BasemapGallery, BasemapToggle]) => {
+            }).then(([esriConfig, MapView, WebMap, Track, Graphic, locator, BasemapGallery, Expand]) => {
                 esriConfig.apiKey = "AAPK646fc7baa89c4b608eb58b54dbbbe1066JR7fGrtnfyFPoTQnl4Z7yp0rUqUJMjQUrurVPBVnBAt75VOFZL-g-La4SwrdiZf";
 
                 const map = new WebMap({
@@ -105,14 +104,23 @@ function Map() {
                     findPlaces(event.target.value, view.center);
                 });
 
-                const basemapToggle = new BasemapToggle({
+                var basemapGallery = new BasemapGallery({
                     view: view,
-                    nextBasemap: "arcgis-imagery"
-                 });
-  
-                 view.ui.add(basemapToggle, {
-                    position: "bottom-right"
-                  });    
+                    container: document.createElement("div"),
+                    source: {
+                        query: {
+                          title: '"World Basemaps for Developers" AND owner:esri'
+                        }
+                      }
+                });
+                
+                var bgExpand = new Expand({
+                    view: view,
+                    content: basemapGallery.domNode,
+                    expandIconClass: "esri-icon-basemap"
+                });
+
+                view.ui.add(bgExpand, "bottom-right");
             })
             return () => {
                 //close the map view
@@ -124,7 +132,7 @@ function Map() {
 
         })
     return (
-        <div style={{ height: 544.74 }} ref={MapEl}>
+        <div style={{ height: 570 }} ref={MapEl}>
 
         </div>
     )
