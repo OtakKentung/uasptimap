@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/uasptimap/static/css/main.96dbc413.chunk.css",
+    "main.js": "/uasptimap/static/js/main.e15456b3.chunk.js",
+    "main.js.map": "/uasptimap/static/js/main.e15456b3.chunk.js.map",
+    "runtime-main.js": "/uasptimap/static/js/runtime-main.0fd5dfb0.js",
+    "runtime-main.js.map": "/uasptimap/static/js/runtime-main.0fd5dfb0.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/uasptimap/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.4fb3a48d.chunk.js": "/uasptimap/static/js/2.4fb3a48d.chunk.js",
+    "static/js/2.4fb3a48d.chunk.js.map": "/uasptimap/static/js/2.4fb3a48d.chunk.js.map",
+    "index.html": "/uasptimap/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/uasptimap/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.96dbc413.chunk.css.map": "/uasptimap/static/css/main.96dbc413.chunk.css.map",
+    "static/js/2.4fb3a48d.chunk.js.LICENSE.txt": "/uasptimap/static/js/2.4fb3a48d.chunk.js.LICENSE.txt",
+    "static/media/fotoAnton.e7035694.jpg": "/uasptimap/static/media/fotoAnton.e7035694.jpg",
+    "static/media/fotoIwa.cad4681c.jpg": "/uasptimap/static/media/fotoIwa.cad4681c.jpg",
+    "static/media/fotoVallen.3f4e680b.jpg": "/uasptimap/static/media/fotoVallen.3f4e680b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0fd5dfb0.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.4fb3a48d.chunk.js",
+    "static/css/main.96dbc413.chunk.css",
+    "static/js/main.e15456b3.chunk.js"
+  ]
+}
