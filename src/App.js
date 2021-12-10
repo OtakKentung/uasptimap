@@ -1,10 +1,11 @@
 import './App.css';
 import Map from './Map';
 import React from 'react';
-import {BrowserRouter as Router,
-        Route,
-        Routes
-      } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Home from './pages/Home/Home';
 import Map1 from './pages/Map1/Map1';
@@ -19,31 +20,35 @@ function App() {
   return (
     <Router>
       <Navbar />
-        <Routes>
-          <Route path="/" exact element={
-            <div className="App" id="MapEl">
-              <Map />
-            </div>}>
-          </Route>
-          <Route path="/aboutus" exact element={<AboutUs/>}></Route>
-          <Route path="/map1" exact element={<Map1 />}></Route>
-          <Route path="/map2" exact element={
+      <Routes>
+        <Route path="/" exact element={
+          <div className="App" id="MapEl">
+            <Map />
+          </div>}>
+        </Route>
+        <Route path="/aboutus" exact element={<AboutUs />}></Route>
+        <Route path="/map1" exact element={<Map1 />}></Route>
+        <Route path="/map2" exact element={
           <div className="App" id="viewDiv">
             <Map2 />
           </div>}></Route>
-          <Route path="/map3" exact element={
-            <div className="App" id="MapEl">
-              <Map3 />
-            </div>}>
-          </Route>
-          <Route path="/map4" exact element={
-            <div className="App" id="MapEl">
-              <Map4 />
-            </div>}>
-          </Route>
-          <Route path="/map5" exact element={<Map5 />}></Route>
-        </Routes>
-    </Router>
+        <Route path="/map3" exact element={
+          <div className="App" id="MapEl">
+            <Map3 />
+          </div>}>
+        </Route>
+        <Route path="/map4" exact element={
+          <div className="App" id="MapEl">
+            <Map4 />
+          </div>}>
+        </Route>
+        <Route path="/map5" exact element={
+          <div className="App" id="MapEl">
+            <Map5 />
+          </div>}>
+        </Route>
+      </Routes>
+    </Router >
   );
 }
 

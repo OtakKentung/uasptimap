@@ -1,11 +1,11 @@
-import React , {useEffect}from "react";
+import React, { useEffect } from "react";
 import './Navbar.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import $ from 'jquery';
 
 function Navbar() {
 
-    function animation(){
+    function animation() {
         var tabsNewAnim = $('#navbarSupportedContent');
         var activeItemNewAnim = tabsNewAnim.find(".active");
         var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
@@ -13,12 +13,12 @@ function Navbar() {
         var itemPosNewAnimTop = activeItemNewAnim.position();
         var itemPosNewAnimLeft = activeItemNewAnim.position();
         $(".hori-selector").css({
-            "top":itemPosNewAnimTop.top + "px",
-            "left":itemPosNewAnimLeft.left + "px",
-            "height":activeWidthNewAnimHeight + "px",
-            "width":activeWidthNewAnimWidth + "px"
+            "top": itemPosNewAnimTop.top + "px",
+            "left": itemPosNewAnimLeft.left + "px",
+            "height": activeWidthNewAnimHeight + "px",
+            "width": activeWidthNewAnimWidth + "px"
         });
-        $("#navbarSupportedContent").on("click", "li", function(){
+        $("#navbarSupportedContent").on("click", "li", function () {
             $("#navbarSupportedContent ul li").removeClass("active");
             $(this).addClass("active");
             var activeWidthNewAnimHeight = $(this).innerHeight();
@@ -26,18 +26,18 @@ function Navbar() {
             var itemPosNewAnimTop = $(this).position();
             var itemPosNewAnimLeft = $(this).position();
             $(".hori-selector").css({
-                "top":itemPosNewAnimTop.top + "px",
-                "left":itemPosNewAnimLeft.left + "px",
-                "height":activeWidthNewAnimHeight + "px",
-                "width":activeWidthNewAnimWidth + "px"
+                "top": itemPosNewAnimTop.top + "px",
+                "left": itemPosNewAnimLeft.left + "px",
+                "height": activeWidthNewAnimHeight + "px",
+                "width": activeWidthNewAnimWidth + "px"
             });
         });
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         animation();
-        $(window).on('resize', function(){
-            setTimeout(function(){
+        $(window).on('resize', function () {
+            setTimeout(function () {
                 animation();
             }, 500);
         });
@@ -50,10 +50,11 @@ function Navbar() {
             </Link>
 
             <button className="navbar-toggler" type="button"
-                onClick={ function(){
-                    setTimeout(function(){
-                        animation(); });
-                } }
+                onClick={function () {
+                    setTimeout(function () {
+                        animation();
+                    });
+                }}
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
@@ -107,10 +108,10 @@ function Navbar() {
 
                     <li className="nav-item">
                         <Link className="nav-link" to="/map5" exact>
-                            <i className="fas fa-map"></i> Map 5
+                            <i className="fas fa-map"></i> Globe
                         </Link>
                     </li>
-                    
+
 
                 </ul>
             </div>
