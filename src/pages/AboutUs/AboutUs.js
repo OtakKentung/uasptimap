@@ -1,12 +1,10 @@
 import React from 'react';
+import Card from '../../Components/Card/Card';
+
 
 function AboutUs() {
     return (
-        <div className="container">
-            <h1 className="text-center" style={{ paddingTop: "30%" }}>
-                About Us
-            </h1>
-        </div>
+        <Card />
     );
 }
 export default AboutUs;

@@ -118,7 +118,10 @@ function Map2() {
 
   });
   return (
-    <div style={{ height: 800 }} ref={viewDiv}></div>
+    <div className="App" id="viewDiv">
+      <div style={{ height: 578.5 }} ref={viewDiv}></div>
+    </div>
+    
   );
 }
 export default Map2;

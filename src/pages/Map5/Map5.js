@@ -132,8 +132,8 @@ function Map() {
 
         })
     return (
-        <div style={{ height: 800 }} ref={MapEl}>
-
+        <div className="App" id="MapEl">
+            <div style={{ height: 578.5 }} ref={MapEl}></div>
         </div>
     )
 }
