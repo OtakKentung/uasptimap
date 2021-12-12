@@ -27,7 +27,7 @@ body{
     display:table;
     clear:both;
 } 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 575px) {
     .card {
       width: 100%;
     }

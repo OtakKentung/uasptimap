@@ -8,7 +8,7 @@ function Card() {
     return (
         <div className="container">
             <div className='column'>
-                <div className="card">
+                <div className="card col-sm-12">
                     <div className="imgBx">
                         <img src={fotoAnton} alt=""></img>
                     </div>
@@ -20,7 +20,7 @@ function Card() {
                 </div>
             </div>
             <div className='column'>
-                <div className="card">
+                <div className="card col-sm-12">
                     <div className="imgBx">
                         <img src={fotoIwa} alt=""></img>
                     </div>
@@ -33,7 +33,7 @@ function Card() {
             </div>
             
             <div className='column'>
-                <div className="card">
+                <div className="card col-sm-12">
                     <div className="imgBx">
                         <img src={fotoVallen} alt=""></img>
                     </div>
