@@ -14,7 +14,7 @@ function Card() {
                 <div className="content">
                     <h3>Antonius Kevin</h3>
                     <h5>00000045444</h5>
-                    <p>CSS, Navbar, Directions, Find Address</p>
+                    <p>CSS, Navbar, Directions, Find Address, 3D Globe</p>
                 </div>
             </div>
             <div className="card">
@@ -34,7 +34,7 @@ function Card() {
                 <div className="content">
                     <h3>Vallencius Gavriel</h3>
                     <h5>00000045651</h5>
-                    <p>Gallery Map, Map</p>
+                    <p>Gallery Maps, Map, Satellite Map, JS</p>
                 </div>
             </div>
         </div>
