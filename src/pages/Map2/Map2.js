@@ -5,7 +5,7 @@ import './Map2.css';
 import { loadModules } from 'esri-loader';
 
 function Map2() {
-  const viewDiv = useRef(null);
+  let viewDiv = useRef(null);
   useEffect(
     () => {
       loadModules(["esri/Map",

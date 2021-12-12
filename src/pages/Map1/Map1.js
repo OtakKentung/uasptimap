@@ -144,7 +144,7 @@ function Map1() {
   return (
     <div className="App">
       <div id="viewDiv">
-        <div style={{ height: 578.5 }} ref={viewDiv}></div>
+        <div style={{ height: 543 }} ref={viewDiv}></div>
       </div>
       <div class="buttons">
         <button id="exaggerate" class="esri-button">
