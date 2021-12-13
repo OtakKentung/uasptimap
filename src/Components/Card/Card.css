@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
 }
 body{
     background-color: #16384c;
@@ -13,21 +12,24 @@ body{
 }
 .container{
     position: relative;
-    width: 1100px;
+    width:100%;
     display:flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 30px;
     padding-top: 5%;
-    margin: 0 -5px;
+    margin: 0 auto !important;
 }
-.container::after{
-    content: "";
-    display:table;
-    clear:both;
-} 
-@media screen and (max-width: 575px) {
+
+@media screen and (max-width: 576px) {
+    .container{
+        width:100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    } 
     .card {
       width: 100%;
     }
